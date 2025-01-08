@@ -1,4 +1,4 @@
-# ByteMart e-commerce store schema creation files
+# E-commerce sample app store schema creation files
 
 This directory contains Fauna Schema Language (FSL) files to create the schema for a sample e-commerce store.
 
