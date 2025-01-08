@@ -1,0 +1,38 @@
+role minimal {
+  privileges Customer {
+    create
+    delete
+    read
+    write
+  }
+  privileges Order {
+    create
+    delete
+    read
+    write
+  }
+  privileges Product {
+    read
+  }
+  privileges Category {
+    read
+  }
+  privileges OrderItem {
+    create
+    delete
+    read
+    write
+  }
+  privileges validateOrderStatusTransition {
+    call
+  }
+  privileges getOrCreateCart {
+    call
+  }
+  privileges checkout {
+    call
+  }
+  privileges createOrUpdateCartItem {
+    call
+  }
+}

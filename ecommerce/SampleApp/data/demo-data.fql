@@ -1,0 +1,156 @@
+let category1 = Category.create({
+  name: 'party',
+  description: 'Party Supplies',
+})
+
+let category2 = Category.create({
+  name: 'frozen',
+  description: 'Frozen Foods',
+})
+
+let category3 = Category.create({
+  name: 'produce',
+  description: 'Fresh Produce',
+})
+
+let product1 = Product.create({
+  name: 'cups',
+  description: 'Translucent 9 Oz, 100 ct',
+  price: 6_98,
+  stock: 100,
+  category: category1,
+})
+
+let product2 = Product.create({
+  name: 'donkey pinata',
+  description: 'Original Classic Donkey Pinata',
+  price: 24_99,
+  stock: 50,
+  category: category1,
+})
+
+let product3 = Product.create({
+  name: 'pizza',
+  description: 'Frozen Cheese',
+  price: 4_99,
+  stock: 100,
+  category: category2,
+})
+
+let product4 = Product.create({
+  name: 'avocados',
+  description: 'Conventional Hass, 4ct bag',
+  price: 3_99,
+  stock: 1000,
+  category: category3,
+})
+
+let product5 = Product.create({
+  name: 'single lime',
+  description: 'Conventional, 1 ct',
+  price: 35,
+  stock: 1000,
+  category: category3,
+})
+
+let product6 = Product.create({
+  name: 'organic limes',
+  description: 'Organic, 16 oz bag',
+  price: 3_49,
+  stock: 50,
+  category: category3
+})
+
+let product7 = Product.create({
+  name: 'limes',
+  description: 'Conventional, 16 oz bag',
+  price: 2_99,
+  stock: 30,
+  category: category3
+})
+
+let product8 = Product.create({
+  name: 'cilantro',
+  description: 'Organic, 1 bunch',
+  price: 1_49,
+  stock: 100,
+  category: category3
+})
+
+let product9 = Product.create({
+  name: 'taco pinata',
+  description: 'Giant Taco Pinata',
+  price: 23_99,
+  stock: 10,
+  category: category1
+})
+
+let customer1Id = 419470118511181892;
+let customer2Id = 419470118545784900;
+let customer3Id = 419470118522716228;
+
+let customer1 = Customer.create({
+  id: customer1Id,
+  name: 'Alice Appleseed',
+  email: 'alice.appleseed@example.com',
+  address: {
+    street: '87856 Mendota Court',
+    city: 'Washington',
+    state: 'DC',
+    postalCode: '20220',
+    country: 'US'
+  }
+})
+
+let customer2 = Customer.create({
+  id: customer2Id,
+  name: 'Bob Brown',
+  email: 'bob.brown@example.com',
+  address: {
+    street: '72 Waxwing Terrace',
+    city: 'Washington',
+    state: 'DC',
+    postalCode: '20002',
+    country: 'US'
+  }
+})
+
+let customer3 = Customer.create({
+  id: customer3Id,
+  name: 'Carol Clark',
+  email: 'carol.clark@example.com',
+  address: {
+    street: '5 Troy Trail',
+    city: 'Washington',
+    state: 'DC',
+    postalCode: '20220',
+    country: 'US'
+  }
+})
+
+getOrCreateCart(customer1Id)
+createOrUpdateCartItem(customer1Id, product1.name, 2)
+createOrUpdateCartItem(customer1Id, product2.name, 1)
+createOrUpdateCartItem(customer1Id, product3.name, 3)
+
+getOrCreateCart(customer2Id)
+createOrUpdateCartItem(customer2Id, product4.name, 2)
+createOrUpdateCartItem(customer2Id, product5.name, 1)
+createOrUpdateCartItem(customer2Id, product6.name, 3)
+
+let SAMPLE_PASSWORD = 'fauna-demo'
+
+Credentials.create({
+  document: customer1,
+  password: SAMPLE_PASSWORD
+})
+
+Credentials.create({
+  document: customer2,
+  password: SAMPLE_PASSWORD
+})
+
+Credentials.create({
+  document: customer3,
+  password: SAMPLE_PASSWORD
+})
