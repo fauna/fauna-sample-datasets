@@ -6,16 +6,12 @@ This directory contains Fauna Schema Language (FSL) files to create the schema f
 - [functions.fsl](./functions.fsl) - schema for the user-defined functions (UDFs)
 - [roles.fsl](./roles.fsl) - schema for the security roles
 
-To create the schema, run the following command to stage the schema changes:
-
-`fauna schema push --database=us/test_fauna`
-
-To apply the schema changes, run the following command:
-
-`fauna schema commit --database=us/test_fauna`
+To create the schema and commit those changes, run the following commands:
+- `cd schema`
+- `fauna schema push --database=us/test_fauna`
+- `fauna schema commit --database=us/test_fauna`
 
 To add the sample data, run the following commands:
 
-`cd ../data`
-
-`fauna query -i ./demo-data.fql --database=us/test_fauna`
+- `cd ../data`
+- `fauna query -i ./demo-data.fql --database=us/test_fauna`
